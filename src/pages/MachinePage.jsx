@@ -123,7 +123,12 @@ export default function MachinePage() {
                 {machine.badge}
               </span>
             )}
-            <MachineVisual type={machine.image} accent={category.accent} />
+            <MachineVisual
+              type={machine.image}
+              accent={category.accent}
+              photo={machine.photo}
+              alt={machine.subtitle}
+            />
           </motion.div>
 
           <motion.div
@@ -140,6 +145,9 @@ export default function MachinePage() {
             <div className="machine-detail__price-block">
               <span className="machine-detail__price-label">System Price</span>
               <span className="machine-detail__price price price-large">{formatPrice(machine.price)}</span>
+              {machine.priceNote && (
+                <span className="machine-detail__price-note">{machine.priceNote}</span>
+              )}
             </div>
             <button
               className="btn btn-primary btn-lg"

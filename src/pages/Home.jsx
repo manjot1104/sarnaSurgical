@@ -1,37 +1,37 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { categories } from '../data/machines'
+import { categories, machines } from '../data/machines'
 import CategoryCard from '../components/CategoryCard'
 import { FadeUp, StaggerContainer, StaggerItem } from '../components/AnimatedReveal'
 import './Home.css'
 
 const stats = [
-  { value: '2,400+', label: 'Parts in Stock' },
-  { value: '48hr', label: 'Global Shipping' },
-  { value: '99.2%', label: 'Compatibility Rate' },
-  { value: '24/7', label: 'Technical Support' },
+  { value: String(machines.length), label: 'Products Available' },
+  { value: String(categories.length), label: 'Specialties' },
+  { value: '304 SS', label: 'Medical Grade Steel' },
+  { value: 'Pan India', label: 'Delivery' },
 ]
 
 const features = [
   {
     icon: '🔬',
-    title: 'OEM Quality',
-    desc: 'Every part meets or exceeds original manufacturer specifications with full traceability.',
+    title: 'Medical Grade',
+    desc: '304 medical grade stainless steel surgical equipment built for operating room reliability.',
   },
   {
     icon: '🚀',
     title: 'Fast Delivery',
-    desc: 'Same-day shipping on in-stock items. Critical parts delivered within 48 hours worldwide.',
+    desc: 'Pan-India delivery on all orders. GST and transport calculated separately.',
   },
   {
     icon: '🛡️',
     title: 'Certified & Compliant',
-    desc: 'ISO 13485 certified facility. FDA registered. CE marked components available.',
+    desc: 'Built with medical grade stainless steel for hospital and surgical centre use.',
   },
   {
     icon: '🔧',
     title: 'Expert Support',
-    desc: 'Dedicated biomedical engineers available 24/7 for compatibility and installation guidance.',
+    desc: 'Dedicated support for product enquiries, orders, and after-sales assistance.',
   },
 ]
 
@@ -61,8 +61,8 @@ export default function Home() {
               <span className="text-gradient">Surgery Moving</span>
             </h1>
             <p className="hero__desc">
-              Premium replacement components for neuro, ENT, cardiac, orthopedic, and ophthalmology
-              surgical systems. OEM-quality parts, delivered when you need them most.
+              Premium C-ARM compatible operating tables and surgical equipment.
+              Medical grade stainless steel, delivered across India.
             </p>
             <div className="hero__actions">
               <Link to="/categories" className="btn btn-primary btn-lg">
@@ -181,7 +181,7 @@ export default function Home() {
                   Ready to Order?
                 </h2>
                 <p className="cta-banner__desc">
-                  Browse our catalog of 2,400+ surgical machine parts. Same-day shipping on in-stock items.
+                  Browse our surgical equipment catalog. Quality OT tables with pan-India delivery.
                 </p>
                 <Link to="/categories" className="btn btn-primary btn-lg">
                   Start Browsing

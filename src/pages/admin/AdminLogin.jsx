@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { adminApi } from '../../services/api'
+import Logo from '../../components/Logo'
 import './admin.css'
 
 export default function AdminLogin() {
@@ -34,9 +35,10 @@ export default function AdminLogin() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="admin-login__title">
-          Sarna <span className="text-gradient">Admin</span>
-        </h1>
+        <div className="admin-login__logo">
+          <Logo size="xl" />
+        </div>
+        <h1 className="admin-login__title">Admin Panel</h1>
         <p className="admin-login__subtitle">Sign in to manage orders & inventory</p>
 
         <form onSubmit={handleSubmit} className="admin-login__form">

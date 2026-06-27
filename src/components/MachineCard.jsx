@@ -24,7 +24,12 @@ export default function MachineCard({ machine, category, index = 0 }) {
               {machine.badge}
             </span>
           )}
-          <MachineVisual type={machine.image} accent={accent} />
+          <MachineVisual
+            type={machine.image}
+            accent={accent}
+            photo={machine.photo}
+            alt={machine.subtitle}
+          />
         </div>
         <div className="machine-card__body">
           <span className="machine-card__category">{category?.shortName}</span>

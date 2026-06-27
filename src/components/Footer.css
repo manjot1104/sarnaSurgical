@@ -38,25 +38,8 @@
 }
 
 .footer__logo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.15rem;
+  display: inline-flex;
   margin-bottom: 1rem;
-  transition: color 0.3s;
-  color: var(--text-primary);
-}
-
-.footer__logo:hover {
-  color: var(--accent);
-}
-
-.footer__logo-icon {
-  width: 36px;
-  height: 36px;
-  color: var(--accent);
 }
 
 .footer__tagline {

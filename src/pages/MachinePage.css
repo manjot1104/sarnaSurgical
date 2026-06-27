@@ -134,6 +134,14 @@
   margin-bottom: 0.25rem;
 }
 
+.machine-detail__price-note {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
 .machine-detail__price {
   color: var(--text-primary);
 }

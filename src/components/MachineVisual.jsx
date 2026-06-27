@@ -179,7 +179,20 @@ const machineVisuals = {
   ),
 }
 
-export default function MachineVisual({ type, accent = '#0d9488', className = '' }) {
+export default function MachineVisual({ type, accent = '#0d9488', photo, alt = '', className = '' }) {
+  if (photo) {
+    return (
+      <motion.div
+        className={`machine-visual machine-visual--photo ${className}`}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <img src={photo} alt={alt} className="machine-visual__photo" />
+      </motion.div>
+    )
+  }
+
   const Visual = machineVisuals[type] || machineVisuals['electrosurg']
 
   return (

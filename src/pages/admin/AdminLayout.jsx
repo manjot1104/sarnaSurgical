@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Outlet, NavLink, useNavigate, useLocation } from 'react-router-dom'
 import { adminApi } from '../../services/api'
+import Logo from '../../components/Logo'
 import './admin.css'
 
 const navItems = [
@@ -55,7 +56,7 @@ export default function AdminLayout() {
       <aside className="admin-sidebar">
         <div className="admin-sidebar__brand">
           <NavLink to="/admin/dashboard">
-            ⚕️ Sarna <span>Admin</span>
+            <Logo size="sm" />
           </NavLink>
         </div>
         <nav className="admin-sidebar__nav">

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { categories } from '../data/machines'
+import Logo from './Logo'
 import './Footer.css'
 
 export default function Footer() {
@@ -10,14 +11,7 @@ export default function Footer() {
         <div className="footer__grid">
           <div className="footer__brand">
             <Link to="/" className="footer__logo">
-              <span className="footer__logo-icon">
-                <svg viewBox="0 0 40 40" fill="none">
-                  <circle cx="20" cy="20" r="18" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
-                  <path d="M20 8v24M12 14h16M12 26h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                  <circle cx="20" cy="20" r="4" fill="currentColor" />
-                </svg>
-              </span>
-              <span>Sarna Surgical</span>
+              <Logo size="lg" />
             </Link>
             <p className="footer__tagline">
               Precision-engineered parts for every surgical specialty. OEM quality, global delivery.
@@ -59,7 +53,7 @@ export default function Footer() {
 
         <div className="footer__bottom">
           <p>&copy; {new Date().getFullYear()} Sarna Surgical. All rights reserved.</p>
-          <p className="footer__cert">ISO 13485 Certified · FDA Registered</p>
+          <p className="footer__cert">304 Medical Grade Stainless Steel · C-ARM Compatible</p>
         </div>
       </div>
     </footer>

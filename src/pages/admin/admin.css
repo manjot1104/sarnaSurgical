@@ -25,17 +25,8 @@
 }
 
 .admin-sidebar__brand a {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.15rem;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  color: var(--text-primary);
-}
-
-.admin-sidebar__brand span {
-  color: var(--accent);
 }
 
 .admin-sidebar__nav {

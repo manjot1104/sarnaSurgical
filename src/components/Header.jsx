@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import Logo from './Logo'
 import './Header.css'
 
 const navLinks = [
@@ -29,17 +30,7 @@ export default function Header() {
     <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
       <div className="container header__inner">
         <Link to="/" className="header__logo">
-          <span className="header__logo-icon">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="20" cy="20" r="18" stroke="currentColor" strokeWidth="1.5" opacity="0.3" />
-              <path d="M20 8v24M12 14h16M12 26h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              <circle cx="20" cy="20" r="4" fill="currentColor" />
-            </svg>
-          </span>
-          <span className="header__logo-text">
-            <span className="header__logo-brand">Sarna</span>
-            <span className="header__logo-sub">Surgical</span>
-          </span>
+          <Logo size="md" />
         </Link>
 
         <nav className="header__nav hide-mobile">

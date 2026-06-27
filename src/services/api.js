@@ -1,4 +1,9 @@
-const API_BASE = '/api'
+// Local dev: Vite proxy forwards /api → localhost:3001
+// Vercel production: vercel.json proxies /api → Render (no VITE_API_URL needed)
+// Optional override: set VITE_API_URL to call Render directly
+const API_BASE = import.meta.env.VITE_API_URL
+  ? `${import.meta.env.VITE_API_URL.replace(/\/$/, '')}/api`
+  : '/api'
 
 async function request(url, options = {}) {
   const headers = { 'Content-Type': 'application/json', ...options.headers }

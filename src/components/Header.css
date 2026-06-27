@@ -27,39 +27,7 @@
 .header__logo {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  transition: transform 0.3s var(--ease-out-expo);
-}
-
-.header__logo:hover {
-  transform: scale(1.02);
-}
-
-.header__logo-icon {
-  width: 40px;
-  height: 40px;
-  color: var(--accent);
-}
-
-.header__logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.header__logo-brand {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.25rem;
-  letter-spacing: -0.02em;
-  color: var(--text-primary);
-}
-
-.header__logo-sub {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 0.85rem;
-  color: var(--text-secondary);
+  flex-shrink: 0;
 }
 
 .header__nav {
