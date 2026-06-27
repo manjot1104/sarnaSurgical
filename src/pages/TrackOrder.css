@@ -1,0 +1,58 @@
+.track-page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  padding: 6rem 0 4rem;
+  position: relative;
+}
+
+.track-page__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(45, 212, 191, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.track-page__inner {
+  max-width: 520px;
+}
+
+.track-page__card {
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.track-page__title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin: 1.25rem 0 1rem;
+}
+
+.track-page__desc {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.track-page__form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.track-page__field label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.track-page__error {
+  padding: 0.75rem 1rem;
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  border-radius: var(--radius-sm);
+  color: #f87171;
+  font-size: 0.9rem;
+}

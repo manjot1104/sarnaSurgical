@@ -1,0 +1,107 @@
+.footer {
+  position: relative;
+  margin-top: var(--section-padding);
+  padding: 4rem 0 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(180deg, transparent 0%, rgba(10, 22, 40, 0.5) 100%);
+}
+
+.footer__glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.5;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 900px) {
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+  transition: color 0.3s;
+}
+
+.footer__logo:hover {
+  color: var(--accent-light);
+}
+
+.footer__logo-icon {
+  width: 36px;
+  height: 36px;
+  color: var(--accent);
+}
+
+.footer__tagline {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  max-width: 320px;
+  line-height: 1.7;
+}
+
+.footer__col h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.footer__col ul li {
+  margin-bottom: 0.65rem;
+}
+
+.footer__col a {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.footer__col a:hover {
+  color: var(--accent-light);
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.footer__cert {
+  color: var(--accent-dark);
+  font-weight: 500;
+}

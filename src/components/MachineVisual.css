@@ -1,0 +1,22 @@
+.machine-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.machine-visual__glow {
+  position: absolute;
+  inset: -20%;
+  border-radius: 50%;
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.machine-visual__svg {
+  width: 70%;
+  height: 70%;
+  position: relative;
+  z-index: 1;
+}

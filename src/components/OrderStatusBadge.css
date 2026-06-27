@@ -1,0 +1,29 @@
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  background: color-mix(in srgb, var(--status-color) 15%, transparent);
+  color: var(--status-color);
+  border: 1px solid color-mix(in srgb, var(--status-color) 30%, transparent);
+  white-space: nowrap;
+}
+
+.status-badge--lg {
+  font-size: 0.85rem;
+  padding: 0.5rem 1.1rem;
+}
+
+.status-badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--status-color);
+  animation: pulse-glow 2s ease-in-out infinite;
+}

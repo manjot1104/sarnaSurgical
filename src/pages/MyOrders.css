@@ -1,0 +1,96 @@
+.my-orders-page {
+  padding: 7rem 0 var(--section-padding);
+}
+
+.my-orders__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 1rem 0 0.75rem;
+}
+
+.my-orders__desc {
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+}
+
+.my-orders__empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-muted);
+}
+
+.my-orders__empty .btn {
+  margin-top: 1.5rem;
+}
+
+.my-orders__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.my-orders__card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  gap: 1.5rem;
+  transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s;
+}
+
+.my-orders__card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(45, 212, 191, 0.1);
+}
+
+.my-orders__card-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.my-orders__num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--accent-light);
+}
+
+.my-orders__machine {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.my-orders__date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.my-orders__card-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.my-orders__total {
+  font-size: 1.1rem;
+}
+
+.my-orders__track {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .my-orders__card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .my-orders__card-right {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+}

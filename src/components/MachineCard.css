@@ -1,0 +1,99 @@
+.machine-card {
+  overflow: hidden;
+  transition: box-shadow 0.5s var(--ease-out-expo), border-color 0.5s;
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.machine-card:hover {
+  box-shadow: 0 16px 48px var(--machine-glow);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.machine-card__link {
+  display: block;
+}
+
+.machine-card__visual {
+  position: relative;
+  padding: 2rem 1.5rem 1rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, transparent 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.machine-card__badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+}
+
+.machine-card__body {
+  padding: 1.5rem;
+}
+
+.machine-card__category {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--machine-accent);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.machine-card__name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
+  transition: color 0.3s;
+}
+
+.machine-card:hover .machine-card__name {
+  color: var(--machine-accent);
+}
+
+.machine-card__subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.machine-card__tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+.machine-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.machine-card__price {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.machine-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--machine-accent);
+  transition: gap 0.3s var(--ease-out-expo);
+}
+
+.machine-card:hover .machine-card__cta {
+  gap: 0.6rem;
+}
