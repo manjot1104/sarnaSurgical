@@ -37,7 +37,7 @@ const machineVisuals = {
       <rect x="30" y="50" width="140" height="90" rx="6" fill="none" stroke={accent} strokeWidth="2" />
       <polyline points="45,110 65,85 85,95 105,70 125,80 155,60" fill="none" stroke={accent} strokeWidth="2.5" strokeLinecap="round" />
       <rect x="50" y="150" width="100" height="20" rx="4" fill={accent} opacity="0.15" stroke={accent} strokeWidth="1" />
-      <circle cx="70" cy="160" r="4" fill="#34d399" />
+      <circle cx="70" cy="160" r="4" fill="#059669" />
       <circle cx="90" cy="160" r="4" fill={accent} />
       <circle cx="110" cy="160" r="4" fill="#fbbf24" />
     </svg>
@@ -86,7 +86,7 @@ const machineVisuals = {
   'cardiac-monitor': ({ accent }) => (
     <svg viewBox="0 0 200 200" className="machine-visual__svg">
       <rect x="35" y="45" width="130" height="100" rx="8" fill="none" stroke={accent} strokeWidth="2" />
-      <polyline points="50,100 60,100 65,70 75,130 85,85 95,115 105,60 115,100 150,100" fill="none" stroke="#f87171" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+      <polyline points="50,100 60,100 65,70 75,130 85,85 95,115 105,60 115,100 150,100" fill="none" stroke="#dc2626" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
       <text x="50" y="65" fill={accent} fontSize="12" fontFamily="sans-serif" opacity="0.7">HR 72</text>
       <rect x="55" y="155" width="90" height="8" rx="4" fill={accent} opacity="0.2" />
     </svg>
@@ -179,7 +179,7 @@ const machineVisuals = {
   ),
 }
 
-export default function MachineVisual({ type, accent = '#2dd4bf', className = '' }) {
+export default function MachineVisual({ type, accent = '#0d9488', className = '' }) {
   const Visual = machineVisuals[type] || machineVisuals['electrosurg']
 
   return (
@@ -189,7 +189,7 @@ export default function MachineVisual({ type, accent = '#2dd4bf', className = ''
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
     >
-      <div className="machine-visual__glow" style={{ background: `radial-gradient(circle, ${accent}33 0%, transparent 70%)` }} />
+      <div className="machine-visual__glow" style={{ background: `radial-gradient(circle, ${accent}22 0%, transparent 70%)` }} />
       <Visual accent={accent} />
     </motion.div>
   )

@@ -9,7 +9,7 @@
 .confirm-page__bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 50% 40%, rgba(45, 212, 191, 0.1) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 50% 40%, rgba(13, 148, 136, 0.1) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -20,21 +20,23 @@
 .confirm-page__card {
   padding: 3rem 2.5rem;
   text-align: center;
+  background: var(--bg-primary);
 }
 
 .confirm-page__icon {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: rgba(52, 211, 153, 0.15);
-  border: 2px solid rgba(52, 211, 153, 0.4);
-  color: #34d399;
+  background: var(--success-subtle);
+  border: 2px solid rgba(5, 150, 105, 0.35);
+  color: var(--success);
   font-size: 2rem;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.5rem;
+  box-shadow: 0 8px 32px rgba(5, 150, 105, 0.15);
 }
 
 .confirm-page__title {
@@ -50,8 +52,8 @@
 
 .confirm-page__order-num {
   padding: 1.25rem;
-  background: rgba(45, 212, 191, 0.08);
-  border: 1px solid rgba(45, 212, 191, 0.2);
+  background: var(--accent-subtle);
+  border: 1px solid rgba(13, 148, 136, 0.2);
   border-radius: var(--radius-md);
   margin-bottom: 2rem;
 }
@@ -68,7 +70,7 @@
 .confirm-page__order-num strong {
   font-family: var(--font-display);
   font-size: 1.5rem;
-  color: var(--accent-light);
+  color: var(--accent-dark);
   letter-spacing: 0.04em;
 }
 
@@ -82,7 +84,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.65rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--border-subtle);
   font-size: 0.95rem;
 }
 

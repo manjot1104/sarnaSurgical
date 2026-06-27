@@ -71,7 +71,7 @@ export default function AdminOrderDetail() {
       </div>
 
       {message && (
-        <div className="admin-login__error" style={{ marginBottom: '1rem', background: message.includes('updated') ? 'rgba(52,211,153,0.1)' : undefined, borderColor: message.includes('updated') ? 'rgba(52,211,153,0.3)' : undefined, color: message.includes('updated') ? '#34d399' : undefined }}>
+        <div className={`admin-login__error ${message.includes('updated') ? 'admin-login__success' : ''}`} style={{ marginBottom: '1rem' }}>
           {message}
         </div>
       )}

@@ -12,6 +12,7 @@
 .order-detail__error h2 {
   font-family: var(--font-display);
   margin-bottom: 1rem;
+  color: var(--text-primary);
 }
 
 .order-detail__header {
@@ -40,8 +41,8 @@
   gap: 2rem;
   padding: 1.5rem 2rem;
   margin-bottom: 2rem;
-  border-color: rgba(167, 139, 250, 0.3);
-  background: rgba(167, 139, 250, 0.08);
+  border-color: rgba(124, 58, 237, 0.25);
+  background: var(--purple-subtle);
   flex-wrap: wrap;
 }
 
@@ -50,6 +51,7 @@
   font-family: var(--font-display);
   font-size: 1.1rem;
   margin-bottom: 0.25rem;
+  color: var(--text-primary);
 }
 
 .order-detail__action-banner p {
@@ -60,16 +62,16 @@
 .order-detail__tracking {
   margin-top: 0.5rem;
   font-size: 0.85rem;
-  color: var(--accent-light);
+  color: var(--accent);
 }
 
 .order-detail__success-banner {
   padding: 1.25rem 2rem;
   margin-bottom: 2rem;
-  background: rgba(52, 211, 153, 0.12);
-  border: 1px solid rgba(52, 211, 153, 0.3);
+  background: var(--success-subtle);
+  border: 1px solid rgba(5, 150, 105, 0.25);
   border-radius: var(--radius-md);
-  color: #34d399;
+  color: var(--success);
   font-family: var(--font-display);
   font-weight: 600;
   text-align: center;
@@ -89,6 +91,7 @@
 .order-detail__card {
   padding: 1.75rem;
   margin-bottom: 1.5rem;
+  background: var(--bg-primary);
 }
 
 .order-detail__card h2 {
@@ -97,7 +100,8 @@
   font-size: 1.1rem;
   margin-bottom: 1.25rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-primary);
 }
 
 .order-detail__items {
@@ -111,13 +115,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid var(--border-subtle);
   gap: 1rem;
 }
 
 .order-detail__item strong {
   display: block;
   margin-bottom: 0.2rem;
+  color: var(--text-primary);
 }
 
 .order-detail__sku {
@@ -150,7 +155,7 @@
 .order-detail__total-row {
   margin-top: 0.5rem;
   padding-top: 0.75rem !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--border-default);
   font-weight: 700;
   color: var(--text-primary) !important;
 }
@@ -160,6 +165,7 @@
   font-weight: 700;
   font-size: 1.15rem;
   margin-bottom: 0.25rem;
+  color: var(--text-primary);
 }
 
 .order-detail__machine-cat {
@@ -172,7 +178,7 @@
   justify-content: space-between;
   padding: 0.6rem 0;
   font-size: 0.9rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid var(--border-subtle);
   gap: 1rem;
 }
 
@@ -187,5 +193,5 @@
 }
 
 .order-detail__tracking-card {
-  border-color: rgba(167, 139, 250, 0.2);
+  border-color: rgba(124, 58, 237, 0.2);
 }

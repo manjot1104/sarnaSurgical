@@ -12,13 +12,13 @@
   position: absolute;
   inset: 0;
   background: var(--cat-gradient);
-  opacity: 0.1;
+  opacity: 0.25;
 }
 
 .category-detail__hero-pattern {
   position: absolute;
   inset: 0;
-  opacity: 0.04;
+  opacity: 0.06;
   background-size: 50px 50px;
 }
 
@@ -121,9 +121,10 @@
   font-weight: 600;
   font-size: 0.85rem;
   color: var(--cat-accent);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--bg-primary);
+  border: 1px solid color-mix(in srgb, var(--cat-accent) 25%, transparent);
   border-radius: 100px;
+  box-shadow: var(--shadow-sm);
 }
 
 .category-detail__machines {

@@ -1,11 +1,16 @@
 import { motion } from 'framer-motion'
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 48, filter: 'blur(8px)' },
   visible: (i = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] },
+    filter: 'blur(0px)',
+    transition: {
+      duration: 0.85,
+      delay: i * 0.12,
+      ease: [0.16, 1, 0.3, 1],
+    },
   }),
 }
 
@@ -15,7 +20,7 @@ export function FadeUp({ children, delay = 0, className = '' }) {
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: '-50px' }}
+      viewport={{ once: true, margin: '-60px' }}
       variants={fadeUp}
       custom={delay}
     >
@@ -24,16 +29,16 @@ export function FadeUp({ children, delay = 0, className = '' }) {
   )
 }
 
-export function StaggerContainer({ children, className = '', stagger = 0.08 }) {
+export function StaggerContainer({ children, className = '', stagger = 0.1 }) {
   return (
     <motion.div
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: '-50px' }}
+      viewport={{ once: true, margin: '-60px' }}
       variants={{
         hidden: {},
-        visible: { transition: { staggerChildren: stagger } },
+        visible: { transition: { staggerChildren: stagger, delayChildren: 0.05 } },
       }}
     >
       {children}
@@ -46,8 +51,14 @@ export function StaggerItem({ children, className = '' }) {
     <motion.div
       className={className}
       variants={{
-        hidden: { opacity: 0, y: 30 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
+        hidden: { opacity: 0, y: 36, scale: 0.96, filter: 'blur(6px)' },
+        visible: {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          filter: 'blur(0px)',
+          transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+        },
       }}
     >
       {children}

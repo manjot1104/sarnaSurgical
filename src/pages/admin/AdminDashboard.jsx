@@ -60,7 +60,7 @@ export default function AdminDashboard() {
         </div>
         <div className="admin-stat-card">
           <div className="admin-stat-card__label">Cancelled</div>
-          <div className="admin-stat-card__value" style={{ color: '#f87171' }}>{stats.cancelled}</div>
+          <div className="admin-stat-card__value admin-stat-card__value--danger">{stats.cancelled}</div>
         </div>
       </div>
 

@@ -50,8 +50,8 @@ export default function Home() {
         <div className="container hero__content">
           <motion.div
             className="hero__text"
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 60, filter: 'blur(10px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
             <span className="hero__eyebrow badge">Precision Surgical Parts</span>
@@ -79,8 +79,8 @@ export default function Home() {
 
           <motion.div
             className="hero__visual"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.85, filter: 'blur(12px)' }}
+            animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="hero__device">

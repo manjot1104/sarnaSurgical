@@ -9,7 +9,7 @@
 
 .machine-visual__glow {
   position: absolute;
-  inset: -20%;
+  inset: -15%;
   border-radius: 50%;
   animation: pulse-glow 4s ease-in-out infinite;
 }
@@ -19,4 +19,5 @@
   height: 70%;
   position: relative;
   z-index: 1;
+  filter: drop-shadow(0 8px 24px rgba(15, 23, 42, 0.08));
 }

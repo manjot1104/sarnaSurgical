@@ -1,12 +1,14 @@
 .machine-card {
   overflow: hidden;
-  transition: box-shadow 0.5s var(--ease-out-expo), border-color 0.5s;
-  border-color: rgba(255, 255, 255, 0.06);
+  transition: box-shadow 0.5s var(--ease-out-expo), border-color 0.5s, transform 0.5s var(--ease-out-expo);
+  border-color: var(--border-subtle);
+  background: var(--bg-primary);
 }
 
 .machine-card:hover {
-  box-shadow: 0 16px 48px var(--machine-glow);
-  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px var(--machine-glow), var(--shadow-lg);
+  border-color: color-mix(in srgb, var(--machine-accent) 20%, transparent);
 }
 
 .machine-card__link {
@@ -16,8 +18,8 @@
 .machine-card__visual {
   position: relative;
   padding: 2rem 1.5rem 1rem;
-  background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, transparent 100%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .machine-card__badge {
@@ -48,6 +50,7 @@
   font-size: 1.25rem;
   letter-spacing: -0.02em;
   margin-bottom: 0.25rem;
+  color: var(--text-primary);
   transition: color 0.3s;
 }
 
@@ -75,7 +78,7 @@
   align-items: center;
   justify-content: space-between;
   padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .machine-card__price {

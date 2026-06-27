@@ -10,7 +10,7 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 50% 30%, rgba(45, 212, 191, 0.08) 0%, transparent 60%);
+    radial-gradient(ellipse at 50% 30%, rgba(13, 148, 136, 0.1) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -21,6 +21,7 @@
 .track-page__card {
   padding: 2.5rem;
   text-align: center;
+  background: var(--bg-primary);
 }
 
 .track-page__title {
@@ -44,15 +45,16 @@
 .track-page__field label {
   display: block;
   font-size: 0.85rem;
+  font-weight: 500;
   color: var(--text-secondary);
   margin-bottom: 0.5rem;
 }
 
 .track-page__error {
   padding: 0.75rem 1rem;
-  background: rgba(248, 113, 113, 0.1);
-  border: 1px solid rgba(248, 113, 113, 0.3);
+  background: var(--danger-subtle);
+  border: 1px solid rgba(220, 38, 38, 0.25);
   border-radius: var(--radius-sm);
-  color: #f87171;
+  color: var(--danger);
   font-size: 0.9rem;
 }

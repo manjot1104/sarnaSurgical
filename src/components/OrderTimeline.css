@@ -12,7 +12,7 @@
   left: 10%;
   right: 10%;
   height: 2px;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--border-default);
   z-index: 0;
 }
 
@@ -37,13 +37,13 @@
   font-weight: 700;
   font-size: 0.85rem;
   background: var(--bg-secondary);
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--border-default);
   color: var(--text-muted);
   transition: all 0.4s var(--ease-out-expo);
 }
 
 .order-timeline__step.done .order-timeline__step-icon {
-  background: color-mix(in srgb, var(--step-color) 20%, transparent);
+  background: color-mix(in srgb, var(--step-color) 15%, white);
   border-color: var(--step-color);
   color: var(--step-color);
 }
@@ -51,8 +51,8 @@
 .order-timeline__step.current .order-timeline__step-icon {
   background: var(--step-color);
   border-color: var(--step-color);
-  color: var(--bg-deep);
-  box-shadow: 0 0 20px color-mix(in srgb, var(--step-color) 40%, transparent);
+  color: #ffffff;
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--step-color) 35%, transparent);
 }
 
 .order-timeline__step-label {
@@ -66,6 +66,7 @@
 .order-timeline__step.done .order-timeline__step-label,
 .order-timeline__step.current .order-timeline__step-label {
   color: var(--text-secondary);
+  font-weight: 500;
 }
 
 @media (max-width: 600px) {
@@ -82,7 +83,7 @@
 }
 
 .order-timeline__events {
-  border-left: 2px solid rgba(255, 255, 255, 0.08);
+  border-left: 2px solid var(--border-default);
   margin-left: 0.5rem;
   padding-left: 1.5rem;
 }
@@ -104,13 +105,15 @@
   height: 10px;
   border-radius: 50%;
   background: var(--accent);
-  border: 2px solid var(--bg-deep);
+  border: 2px solid var(--bg-primary);
+  box-shadow: 0 0 0 2px var(--accent-subtle);
 }
 
 .order-timeline__message {
   display: block;
   font-size: 0.95rem;
   margin-bottom: 0.25rem;
+  color: var(--text-primary);
 }
 
 .order-timeline__time,
@@ -120,9 +123,10 @@
 }
 
 .order-timeline--cancelled .order-timeline__marker {
-  background: #f87171;
+  background: var(--danger);
+  box-shadow: 0 0 0 2px var(--danger-subtle);
 }
 
 .order-timeline__event--active .order-timeline__message {
-  color: #f87171;
+  color: var(--danger);
 }

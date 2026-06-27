@@ -5,17 +5,17 @@ import { formatPrice } from '../data/machines'
 import './MachineCard.css'
 
 export default function MachineCard({ machine, category, index = 0 }) {
-  const accent = category?.accent || '#2dd4bf'
+  const accent = category?.accent || '#0d9488'
 
   return (
     <motion.article
       className="machine-card glass-card"
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 40, filter: 'blur(8px)' }}
+      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
       viewport={{ once: true, margin: '-30px' }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
       whileHover={{ y: -6 }}
-      style={{ '--machine-accent': accent, '--machine-glow': category?.glow || 'rgba(45,212,191,0.3)' }}
+      style={{ '--machine-accent': accent, '--machine-glow': category?.glow || 'rgba(13,148,136,0.15)' }}
     >
       <Link to={`/machine/${machine.id}`} className="machine-card__link">
         <div className="machine-card__visual">

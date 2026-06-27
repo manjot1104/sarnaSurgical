@@ -5,31 +5,34 @@
   border-radius: var(--radius-lg);
   overflow: hidden;
   min-height: 280px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: transform 0.5s var(--ease-out-expo), box-shadow 0.5s var(--ease-out-expo);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.5s var(--ease-out-expo), box-shadow 0.5s var(--ease-out-expo), border-color 0.5s;
 }
 
 .category-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 60px var(--cat-glow);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px var(--cat-glow), var(--shadow-lg);
+  border-color: color-mix(in srgb, var(--cat-accent) 25%, transparent);
 }
 
 .category-card__bg {
   position: absolute;
   inset: 0;
   background: var(--cat-gradient);
-  opacity: 0.12;
+  opacity: 0.35;
   transition: opacity 0.5s;
 }
 
 .category-card:hover .category-card__bg {
-  opacity: 0.22;
+  opacity: 0.55;
 }
 
 .category-card__pattern {
   position: absolute;
   inset: 0;
-  opacity: 0.06;
+  opacity: 0.08;
   background-size: 40px 40px;
 }
 
@@ -89,6 +92,7 @@
   font-size: 1.35rem;
   margin-bottom: 0.5rem;
   letter-spacing: -0.02em;
+  color: var(--text-primary);
 }
 
 .category-card__tagline {
@@ -122,7 +126,7 @@
   left: -100%;
   width: 60%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
   transition: left 0.7s var(--ease-out-expo);
   pointer-events: none;
 }

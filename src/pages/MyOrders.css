@@ -34,12 +34,13 @@
   align-items: center;
   padding: 1.5rem;
   gap: 1.5rem;
+  background: var(--bg-primary);
   transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s;
 }
 
 .my-orders__card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(45, 212, 191, 0.1);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-accent);
 }
 
 .my-orders__card-left {
@@ -52,7 +53,7 @@
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.1rem;
-  color: var(--accent-light);
+  color: var(--accent-dark);
 }
 
 .my-orders__machine {
@@ -74,6 +75,7 @@
 
 .my-orders__total {
   font-size: 1.1rem;
+  color: var(--text-primary);
 }
 
 .my-orders__track {

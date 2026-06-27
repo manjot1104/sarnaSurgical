@@ -1,10 +1,10 @@
 export const ORDER_STATUS = {
-  placed: { label: 'Order Placed', color: '#fbbf24', icon: '📋' },
-  confirmed: { label: 'Confirmed', color: '#38bdf8', icon: '✅' },
-  dispatched: { label: 'Dispatched', color: '#a78bfa', icon: '🚚' },
-  received: { label: 'Received', color: '#34d399', icon: '📦' },
-  completed: { label: 'Completed', color: '#2dd4bf', icon: '🎉' },
-  cancelled: { label: 'Cancelled', color: '#f87171', icon: '✕' },
+  placed: { label: 'Order Placed', color: '#d97706', icon: '📋' },
+  confirmed: { label: 'Confirmed', color: '#0284c7', icon: '✅' },
+  dispatched: { label: 'Dispatched', color: '#7c3aed', icon: '🚚' },
+  received: { label: 'Received', color: '#059669', icon: '📦' },
+  completed: { label: 'Completed', color: '#0d9488', icon: '🎉' },
+  cancelled: { label: 'Cancelled', color: '#dc2626', icon: '✕' },
 }
 
 export const STATUS_STEPS = ['placed', 'confirmed', 'dispatched', 'received', 'completed']

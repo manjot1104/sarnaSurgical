@@ -10,10 +10,11 @@
 
 .header--scrolled {
   padding: 0.75rem 0;
-  background: rgba(5, 10, 18, 0.85);
+  background: var(--overlay);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
 }
 
 .header__inner {
@@ -51,6 +52,7 @@
   font-weight: 800;
   font-size: 1.25rem;
   letter-spacing: -0.02em;
+  color: var(--text-primary);
 }
 
 .header__logo-sub {
@@ -82,13 +84,14 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--accent);
+  background: linear-gradient(90deg, var(--accent-dark), var(--accent));
+  border-radius: 2px;
   transition: width 0.4s var(--ease-out-expo);
 }
 
 .header__nav-link:hover,
 .header__nav-link.active {
-  color: var(--text-primary);
+  color: var(--accent-dark);
 }
 
 .header__nav-link.active::after,
@@ -130,9 +133,10 @@
 
 .header__mobile-menu {
   overflow: hidden;
-  background: rgba(5, 10, 18, 0.95);
+  background: var(--overlay);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -150,5 +154,5 @@
 }
 
 .header__mobile-link:hover {
-  color: var(--accent-light);
+  color: var(--accent);
 }
