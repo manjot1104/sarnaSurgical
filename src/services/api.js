@@ -69,6 +69,63 @@ export const adminApi = {
     request('/admin/stats', { headers: adminHeaders() }),
 }
 
+export const productsApi = {
+  list: () => request('/products'),
+
+  getById: (id) => request(`/products/${id}`),
+
+  adminList: () =>
+    request('/products/admin/all', { headers: adminHeaders() }),
+
+  create: (data) =>
+    request('/products/admin', {
+      method: 'POST',
+      headers: adminHeaders(),
+      body: JSON.stringify(data),
+    }),
+
+  update: (id, data) =>
+    request(`/products/admin/${id}`, {
+      method: 'PUT',
+      headers: adminHeaders(),
+      body: JSON.stringify(data),
+    }),
+
+  delete: (id) =>
+    request(`/products/admin/${id}`, {
+      method: 'DELETE',
+      headers: adminHeaders(),
+    }),
+
+  uploadImage: async (file) => {
+    const token = sessionStorage.getItem('adminToken')
+    const formData = new FormData()
+    formData.append('image', file)
+    const res = await fetch(`${API_BASE}/products/admin/upload`, {
+      method: 'POST',
+      headers: token ? { Authorization: `Bearer ${token}` } : {},
+      body: formData,
+    })
+    const data = await res.json().catch(() => ({}))
+    if (!res.ok) throw new Error(data.error || 'Upload failed')
+    return data
+  },
+}
+
+export const contactApi = {
+  submit: (data) =>
+    request('/contact', { method: 'POST', body: JSON.stringify(data) }),
+
+  adminList: () =>
+    request('/contact', { headers: adminHeaders() }),
+
+  markRead: (id) =>
+    request(`/contact/${id}/read`, {
+      method: 'PATCH',
+      headers: adminHeaders(),
+    }),
+}
+
 export function saveOrderToHistory(order) {
   try {
     const key = 'sarna_order_history'
@@ -111,8 +168,8 @@ export function updateOrderInHistory(order) {
   }
 }
 
-export const SHIPPING_THRESHOLD = 500
-export const SHIPPING_COST = 29
+export const SHIPPING_THRESHOLD = 50000
+export const SHIPPING_COST = 2500
 
 export function calcShipping(subtotal) {
   return subtotal >= SHIPPING_THRESHOLD ? 0 : SHIPPING_COST

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { categories } from '../data/machines'
+import { company, productsDealtIn, telLink, whatsappLink, formatMobile } from '../data/company'
 import Logo from './Logo'
 import './Footer.css'
 
@@ -13,47 +13,61 @@ export default function Footer() {
             <Link to="/" className="footer__logo">
               <Logo size="lg" />
             </Link>
+            <p className="footer__company-name">{company.legalName}</p>
             <p className="footer__tagline">
-              Precision-engineered parts for every surgical specialty. OEM quality, global delivery.
+              {company.tagline}. Speciality in {company.specialty.toLowerCase()} — operation tables,
+              hospital equipment & complete surgical solutions across India.
             </p>
           </div>
 
           <div className="footer__col">
-            <h4>Specialties</h4>
+            <h4>Products</h4>
             <ul>
-              {categories.slice(0, 4).map((cat) => (
-                <li key={cat.id}>
-                  <Link to={`/category/${cat.id}`}>{cat.name}</Link>
-                </li>
-              ))}
+              <li><Link to="/categories">All Categories</Link></li>
+              <li><Link to="/category/general">General Surgery</Link></li>
+              <li><Link to="/faq">FAQ</Link></li>
             </ul>
           </div>
 
           <div className="footer__col">
-            <h4>More</h4>
+            <h4>Company</h4>
             <ul>
-              {categories.slice(4).map((cat) => (
-                <li key={cat.id}>
-                  <Link to={`/category/${cat.id}`}>{cat.name}</Link>
-                </li>
-              ))}
-              <li><Link to="/categories">All Specialties</Link></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
+              <li><Link to="/track">Track Order</Link></li>
+              <li><Link to="/my-orders">My Orders</Link></li>
             </ul>
           </div>
 
           <div className="footer__col">
             <h4>Contact</h4>
-            <ul>
-              <li><a href="mailto:orders@sarnasurgical.com">orders@sarnasurgical.com</a></li>
-              <li><a href="tel:+18005551234">+1 (800) 555-1234</a></li>
-              <li>Mon–Fri, 8am–6pm EST</li>
+            <ul className="footer__contact-list">
+              <li>
+                <a href={`mailto:${company.email}`}>{company.email}</a>
+              </li>
+              {company.phones.mobile.map((p) => (
+                <li key={p.number}>
+                  <a href={telLink(p.number)}>{formatMobile(p.number)}</a>
+                  {p.whatsapp && (
+                    <> · <a href={whatsappLink(p.number)} target="_blank" rel="noopener noreferrer">WhatsApp</a></>
+                  )}
+                </li>
+              ))}
+              {company.phones.landline.map((p) => (
+                <li key={p.number}>
+                  <a href={telLink(p.number)}>{p.display}</a>
+                </li>
+              ))}
+              <li className="footer__address">{company.address.full}</li>
             </ul>
           </div>
         </div>
 
         <div className="footer__bottom">
-          <p>&copy; {new Date().getFullYear()} Sarna Surgical. All rights reserved.</p>
-          <p className="footer__cert">304 Medical Grade Stainless Steel · C-ARM Compatible</p>
+          <p>&copy; {new Date().getFullYear()} {company.legalName}. All rights reserved.</p>
+          <p className="footer__cert">
+            {company.gstDisplay} · {company.drugLicenses.join(' · ')}
+          </p>
         </div>
       </div>
     </footer>

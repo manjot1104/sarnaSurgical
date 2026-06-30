@@ -27,3 +27,12 @@
   background: var(--status-color);
   animation: pulse-glow 2s ease-in-out infinite;
 }
+
+@media (max-width: 400px) {
+  .status-badge {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.65rem;
+    white-space: normal;
+    text-align: center;
+  }
+}

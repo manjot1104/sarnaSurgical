@@ -1,0 +1,238 @@
+.static-page {
+  padding-bottom: var(--section-padding);
+}
+
+.static-page__hero {
+  padding: 7rem 0 3rem;
+  background: linear-gradient(180deg, rgba(13, 148, 136, 0.06) 0%, transparent 100%);
+}
+
+.static-page__title {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  margin: 1rem 0;
+}
+
+.static-page__lead {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 640px;
+  line-height: 1.8;
+}
+
+.static-page__content {
+  padding-top: 2rem;
+}
+
+.static-page__content--narrow {
+  max-width: 760px;
+}
+
+.static-section {
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.static-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.static-section p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.static-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.static-list li {
+  color: var(--text-secondary);
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.static-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.static-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 800px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .static-page__hero {
+    padding-top: 5.5rem;
+  }
+
+  .static-cta {
+    flex-direction: column;
+  }
+
+  .static-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.contact-info,
+.contact-form {
+  padding: 2rem;
+}
+
+.contact-info h2,
+.contact-form h2 {
+  font-family: var(--font-display);
+  margin-bottom: 0.5rem;
+}
+
+.contact-info__subtitle {
+  color: var(--accent-dark);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+.contact-info__map-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.contact-info__licenses {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.contact-info__item {
+  margin-bottom: 1.25rem;
+}
+
+.contact-info__item strong {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.contact-info__item a {
+  color: var(--accent);
+}
+
+.contact-info__item p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form__field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.4rem;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.faq-item {
+  padding: 0;
+  overflow: hidden;
+}
+
+.faq-item__question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-primary);
+  background: none;
+}
+
+.faq-item__icon {
+  font-size: 1.25rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.faq-item__answer {
+  padding: 0 1.5rem 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.not-found {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+}
+
+.not-found__inner {
+  text-align: center;
+  padding: 6rem 0;
+}
+
+.not-found__code {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 12vw, 8rem);
+  font-weight: 800;
+  color: var(--accent);
+  opacity: 0.25;
+  display: block;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.not-found__inner p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}

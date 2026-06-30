@@ -1,0 +1,75 @@
+/* ============================================
+   Global responsive utilities & fixes
+   ============================================ */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Prevent iOS zoom on input focus */
+@media (max-width: 768px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Touch-friendly tap targets */
+@media (max-width: 768px) {
+  .btn {
+    min-height: 44px;
+  }
+
+  .part-item__qty-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Full-width buttons on small screens when needed */
+@media (max-width: 480px) {
+  .btn-full-mobile {
+    width: 100%;
+  }
+}
+
+/* Long product names / prices */
+.machine-card__name,
+.machine-detail__name,
+.machine-card__price,
+.admin-table td {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Reduced section spacing on mobile */
+@media (max-width: 768px) {
+  :root {
+    --section-padding: clamp(2.5rem, 6vw, 4rem);
+  }
+}
+
+/* Container tighter on phones */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* Tables always scroll on small screens */
+@media (max-width: 768px) {
+  .admin-table-wrap {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .admin-table {
+    min-width: 640px;
+  }
+}

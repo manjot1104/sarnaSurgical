@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { useCatalog } from '../context/CatalogContext'
 import './CategoryCard.css'
 
 export default function CategoryCard({ category, index = 0 }) {
+  const { getProductCount } = useCatalog()
+  const count = getProductCount(category.id)
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -25,6 +29,11 @@ export default function CategoryCard({ category, index = 0 }) {
           <span className="category-card__icon">{category.icon}</span>
           <h3 className="category-card__name">{category.name}</h3>
           <p className="category-card__tagline">{category.tagline}</p>
+          {count > 0 ? (
+            <span className="category-card__count">{count} {count === 1 ? 'Product' : 'Products'}</span>
+          ) : (
+            <span className="category-card__count category-card__count--soon">Coming Soon</span>
+          )}
           <span className="category-card__arrow">
             Explore
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">

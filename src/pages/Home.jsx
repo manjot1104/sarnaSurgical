@@ -1,43 +1,51 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { categories, machines } from '../data/machines'
+import { categories } from '../data/machines'
+import { company } from '../data/company'
+import { useCatalog } from '../context/CatalogContext'
 import CategoryCard from '../components/CategoryCard'
+import PageMeta from '../components/PageMeta'
 import { FadeUp, StaggerContainer, StaggerItem } from '../components/AnimatedReveal'
 import './Home.css'
 
-const stats = [
-  { value: String(machines.length), label: 'Products Available' },
-  { value: String(categories.length), label: 'Specialties' },
-  { value: '304 SS', label: 'Medical Grade Steel' },
-  { value: 'Pan India', label: 'Delivery' },
-]
-
 const features = [
   {
-    icon: '🔬',
-    title: 'Medical Grade',
-    desc: '304 medical grade stainless steel surgical equipment built for operating room reliability.',
+    icon: '🏥',
+    title: 'Complete Hospital Solutions',
+    desc: 'Operation tables, OT lights, surgical instruments, diagnostic & nursing equipment — all under one roof.',
+  },
+  {
+    icon: '📋',
+    title: 'Licensed & Compliant',
+    desc: `${company.gstDisplay}. Registered drug licenses for wholesale distribution of medical supplies.`,
   },
   {
     icon: '🚀',
-    title: 'Fast Delivery',
-    desc: 'Pan-India delivery on all orders. GST and transport calculated separately.',
-  },
-  {
-    icon: '🛡️',
-    title: 'Certified & Compliant',
-    desc: 'Built with medical grade stainless steel for hospital and surgical centre use.',
+    title: 'Pan-India Delivery',
+    desc: 'Based in Delhi (Bhagirath Palace), we supply hospitals and clinics across India with GST invoicing.',
   },
   {
     icon: '🔧',
     title: 'Expert Support',
-    desc: 'Dedicated support for product enquiries, orders, and after-sales assistance.',
+    desc: `Call ${company.phones.mobile[0].display} or WhatsApp us for product enquiries, quotes & orders.`,
   },
 ]
 
 export default function Home() {
+  const { machines } = useCatalog()
+
+  const stats = [
+    { value: String(machines.length), label: 'Products Online' },
+    { value: '6+', label: 'Specialties' },
+    { value: 'Delhi', label: 'Bhagirath Palace' },
+    { value: 'Pan India', label: 'Delivery' },
+  ]
+
   return (
     <div className="home">
+      <PageMeta
+        description={`${company.legalName} — ${company.tagline}. Surgical instruments, OT tables, hospital equipment. Delhi. Call ${company.phones.mobile[0].display}.`}
+      />
       {/* Hero */}
       <section className="hero">
         <div className="hero__bg">
@@ -54,15 +62,15 @@ export default function Home() {
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="hero__eyebrow badge">Precision Surgical Parts</span>
+            <span className="hero__eyebrow badge">{company.legalName}</span>
             <h1 className="hero__title display-title">
-              Parts That Keep
+              {company.tagline.split(' ')[0]}
               <br />
-              <span className="text-gradient">Surgery Moving</span>
+              <span className="text-gradient">{company.tagline.split(' ').slice(1).join(' ')}</span>
             </h1>
             <p className="hero__desc">
-              Premium C-ARM compatible operating tables and surgical equipment.
-              Medical grade stainless steel, delivered across India.
+              Speciality in surgical instruments — operation tables, OT lights, ECG machines,
+              pulse oximeters, autoclaves & complete hospital equipment. Based in Delhi, serving all of India.
             </p>
             <div className="hero__actions">
               <Link to="/categories" className="btn btn-primary btn-lg">
@@ -133,10 +141,10 @@ export default function Home() {
       <section className="specialties" id="specialties">
         <div className="container">
           <FadeUp className="specialties__header">
-            <span className="badge">Surgical Specialties</span>
-            <h2 className="section-title">Find Parts by Discipline</h2>
+            <span className="badge">Product Categories</span>
+            <h2 className="section-title">Browse by Specialty</h2>
             <p className="section-subtitle">
-              Select your surgical specialty to browse compatible machines and components
+              Select your surgical specialty to browse compatible equipment and products
             </p>
           </FadeUp>
 
@@ -181,7 +189,7 @@ export default function Home() {
                   Ready to Order?
                 </h2>
                 <p className="cta-banner__desc">
-                  Browse our surgical equipment catalog. Quality OT tables with pan-India delivery.
+                  Browse our catalog or contact us for quotes on surgical instruments, OT tables, and hospital equipment.
                 </p>
                 <Link to="/categories" className="btn btn-primary btn-lg">
                   Start Browsing

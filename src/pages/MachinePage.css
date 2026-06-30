@@ -557,3 +557,63 @@
 .order-success > button:hover {
   color: var(--text-primary);
 }
+
+@media (max-width: 768px) {
+  .machine-detail__breadcrumb-wrap {
+    padding-top: 5.5rem;
+  }
+
+  .machine-detail__visual-wrap {
+    min-height: 260px;
+    padding: 1.5rem 1rem;
+  }
+
+  .machine-detail__order-panel {
+    position: static;
+  }
+
+  .machine-detail__price-block {
+    display: block;
+    width: 100%;
+  }
+
+  .machine-detail__specs,
+  .machine-detail__parts {
+    padding: 2.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .machine-detail__breadcrumb-wrap {
+    padding-top: 5rem;
+  }
+
+  .machine-detail__hero {
+    padding: 1rem 0 2.5rem;
+  }
+
+  .order-modal-overlay {
+    padding: 0.75rem;
+    align-items: flex-end;
+  }
+
+  .order-modal {
+    padding: 1.75rem 1.25rem;
+    max-height: 92vh;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .order-success {
+    left: 1rem;
+    right: 1rem;
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    transform: none;
+    max-width: none;
+    flex-wrap: wrap;
+  }
+
+  .order-panel {
+    padding: 1.5rem;
+  }
+}

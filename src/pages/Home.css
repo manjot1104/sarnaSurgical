@@ -368,3 +368,56 @@
   margin: 0 auto 2rem;
   line-height: 1.7;
 }
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding-top: 88px;
+    padding-bottom: 2rem;
+  }
+
+  .hero__stats {
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+    padding: 1.5rem 0;
+  }
+
+  .specialties__header,
+  .features__header {
+    margin-bottom: 2.5rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero__visual {
+    display: none;
+  }
+
+  .hero__stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .cta-banner {
+    padding: 2rem 1.25rem;
+  }
+
+  .cta-banner__content .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

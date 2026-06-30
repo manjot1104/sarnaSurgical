@@ -1,15 +1,18 @@
 import { useState } from 'react'
 import { useParams, Link, Navigate, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { getMachineById, getCategoryById, formatPrice } from '../data/machines'
+import { getCategoryById, formatPrice } from '../data/machines'
+import { useCatalog } from '../context/CatalogContext'
 import { ordersApi, saveOrderToHistory, calcShipping, SHIPPING_THRESHOLD } from '../services/api'
 import MachineVisual from '../components/MachineVisual'
+import PageMeta from '../components/PageMeta'
 import { FadeUp } from '../components/AnimatedReveal'
 import './MachinePage.css'
 
 export default function MachinePage() {
   const { machineId } = useParams()
   const navigate = useNavigate()
+  const { getMachineById, loading } = useCatalog()
   const machine = getMachineById(machineId)
   const category = machine ? getCategoryById(machine.categoryId) : null
 
@@ -21,9 +24,15 @@ export default function MachinePage() {
     name: '', email: '', phone: '', hospital: '', address: '', notes: '',
   })
 
+  if (loading) {
+    return <div className="container" style={{ padding: '8rem 0', textAlign: 'center', color: 'var(--text-muted)' }}>Loading product...</div>
+  }
+
   if (!machine || !category) {
     return <Navigate to="/categories" replace />
   }
+
+  const parts = machine.parts || []
 
   const updateQty = (partId, delta) => {
     setCart((prev) => {
@@ -37,7 +46,7 @@ export default function MachinePage() {
     })
   }
 
-  const cartTotal = machine.parts.reduce((sum, part) => {
+  const cartTotal = parts.reduce((sum, part) => {
     const qty = cart[part.id] || 0
     return sum + part.price * qty
   }, 0)
@@ -52,7 +61,7 @@ export default function MachinePage() {
     setOrderError('')
     setSubmitting(true)
 
-    const items = machine.parts
+    const items = parts
       .filter((p) => cart[p.id])
       .map((p) => ({
         id: p.id,
@@ -97,6 +106,7 @@ export default function MachinePage() {
         '--cat-glow': category.glow,
       }}
     >
+      <PageMeta title={machine.name} description={machine.description?.slice(0, 160)} />
       {/* Breadcrumb */}
       <div className="container machine-detail__breadcrumb-wrap">
         <nav className="machine-detail__breadcrumb">
@@ -192,15 +202,15 @@ export default function MachinePage() {
       <section className="machine-detail__parts" id="parts-section">
         <div className="container">
           <FadeUp>
-            <h2 className="section-title machine-detail__section-title">Replacement Parts</h2>
+            <h2 className="section-title machine-detail__section-title">Order Items</h2>
             <p className="section-subtitle machine-detail__parts-desc">
-              OEM-compatible components for {machine.name}. Add parts to your order below.
+              Select items for {machine.name}. Add to your order below.
             </p>
           </FadeUp>
 
           <div className="machine-detail__parts-layout">
             <div className="machine-detail__parts-list">
-              {machine.parts.map((part, i) => (
+              {parts.map((part, i) => (
                 <motion.div
                   key={part.id}
                   className="part-item glass-card"
@@ -249,7 +259,7 @@ export default function MachinePage() {
                   <p className="order-panel__empty">Select parts to begin your order</p>
                 ) : (
                   <ul className="order-panel__items">
-                    {machine.parts
+                    {parts
                       .filter((p) => cart[p.id])
                       .map((part) => (
                         <li key={part.id} className="order-panel__item">
@@ -282,7 +292,7 @@ export default function MachinePage() {
                 </button>
 
                 <p className="order-panel__note">
-                  Free shipping on orders over $500. 30-day return policy on unused parts.
+                  Free shipping on orders over {formatPrice(SHIPPING_THRESHOLD)}. GST and transport as applicable.
                 </p>
               </div>
             </div>
@@ -322,7 +332,7 @@ export default function MachinePage() {
                     id="name"
                     type="text"
                     required
-                    placeholder="Dr. Jane Smith"
+                    placeholder="Dr. Rajesh Kumar"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   />
@@ -333,7 +343,7 @@ export default function MachinePage() {
                     id="email"
                     type="email"
                     required
-                    placeholder="jane@hospital.org"
+                    placeholder="rajesh@hospital.in"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
@@ -344,7 +354,7 @@ export default function MachinePage() {
                     id="phone"
                     type="tel"
                     required
-                    placeholder="+1 (555) 123-4567"
+                    placeholder="+91 98765 43210"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   />
@@ -355,7 +365,7 @@ export default function MachinePage() {
                     id="hospital"
                     type="text"
                     required
-                    placeholder="Metro General Hospital"
+                    placeholder="Apollo Hospital, Delhi"
                     value={formData.hospital}
                     onChange={(e) => setFormData({ ...formData, hospital: e.target.value })}
                   />
@@ -366,7 +376,7 @@ export default function MachinePage() {
                     id="address"
                     required
                     rows={2}
-                    placeholder="123 Medical Center Dr, City, State, ZIP"
+                    placeholder="Street, City, State, PIN Code"
                     value={formData.address}
                     onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                   />

@@ -158,3 +158,23 @@
 .category-detail__empty .btn {
   margin-top: 1.5rem;
 }
+
+@media (max-width: 768px) {
+  .category-detail__hero {
+    padding: 5.5rem 0 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-detail__hero {
+    padding: 5rem 0 2rem;
+  }
+
+  .category-detail__icon {
+    font-size: 3rem;
+  }
+
+  .category-detail__desc {
+    font-size: 1rem;
+  }
+}

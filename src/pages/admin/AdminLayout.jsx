@@ -6,7 +6,9 @@ import './admin.css'
 
 const navItems = [
   { to: '/admin/dashboard', label: 'Dashboard', icon: '📊' },
-  { to: '/admin/orders', label: 'All Orders', icon: '📦' },
+  { to: '/admin/orders', label: 'Orders', icon: '📦' },
+  { to: '/admin/products', label: 'Products', icon: '🏥' },
+  { to: '/admin/enquiries', label: 'Enquiries', icon: '✉️' },
 ]
 
 export default function AdminLayout() {
@@ -45,11 +47,15 @@ export default function AdminLayout() {
     return <div className="admin-loading">Verifying session...</div>
   }
 
-  const pageTitle = location.pathname.includes('/orders/')
-    ? 'Order Details'
-    : location.pathname.includes('/orders')
-      ? 'All Orders'
-      : 'Dashboard'
+  const pageTitle = location.pathname.includes('/products')
+    ? location.pathname.includes('/new') ? 'Add Product' : 'Edit Product'
+    : location.pathname.includes('/enquiries')
+      ? 'Enquiries'
+      : location.pathname.includes('/orders/')
+        ? 'Order Details'
+        : location.pathname.includes('/orders')
+          ? 'All Orders'
+          : 'Dashboard'
 
   return (
     <div className="admin-layout">

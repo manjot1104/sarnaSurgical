@@ -104,6 +104,19 @@
   line-height: 1.5;
 }
 
+.category-card__count {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--cat-accent);
+}
+
+.category-card__count--soon {
+  color: var(--text-muted);
+}
+
 .category-card__arrow {
   display: inline-flex;
   align-items: center;
@@ -133,4 +146,15 @@
 
 .category-card:hover .category-card__shine {
   left: 150%;
+}
+
+@media (max-width: 480px) {
+  .category-card {
+    min-height: 220px;
+    padding: 1.5rem;
+  }
+
+  .category-card__name {
+    font-size: 1.2rem;
+  }
 }

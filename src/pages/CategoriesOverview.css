@@ -49,3 +49,19 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .categories-page__hero {
+    padding: 5.5rem 0 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .categories-page__hero {
+    padding: 5rem 0 2rem;
+  }
+
+  .categories-page__desc {
+    font-size: 1rem;
+  }
+}

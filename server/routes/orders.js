@@ -8,6 +8,7 @@ import {
   ORDER_STATUSES,
 } from '../store/ordersStore.js'
 import { requireAdmin } from '../middleware/auth.js'
+import { notifyOrderPlaced, notifyOrderStatus } from '../services/email.js'
 
 const router = Router()
 
@@ -27,6 +28,8 @@ router.post('/', async (req, res) => {
       shipping: shipping || 0,
       total,
     })
+
+    notifyOrderPlaced(order)
 
     res.status(201).json(order)
   } catch (err) {
@@ -86,11 +89,15 @@ router.patch('/:id/receive', async (req, res) => {
       by: 'customer',
     })
 
+    notifyOrderStatus(updated, 'received', 'Thank you for confirming receipt of your order.')
+
     updated = await updateOrderStatus(order.id, {
       status: ORDER_STATUSES.COMPLETED,
       message: 'Order completed successfully. Thank you for your business!',
       by: 'system',
     })
+
+    notifyOrderStatus(updated, 'completed')
 
     res.json(updated)
   } catch (err) {
@@ -148,6 +155,8 @@ router.patch('/:id/status', requireAdmin, async (req, res) => {
       courierName,
       adminNotes,
     })
+
+    notifyOrderStatus(updated, status, message || statusMessages[status])
 
     res.json(updated)
   } catch (err) {

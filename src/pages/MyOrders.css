@@ -84,6 +84,10 @@
 }
 
 @media (max-width: 600px) {
+  .my-orders-page {
+    padding-top: 5.5rem;
+  }
+
   .my-orders__card {
     flex-direction: column;
     align-items: flex-start;
@@ -94,5 +98,22 @@
     align-items: center;
     width: 100%;
     justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .my-orders__card {
+    padding: 1.25rem;
+  }
+
+  .my-orders__card-right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .my-orders__card-right .btn {
+    width: 100%;
+    justify-content: center;
   }
 }

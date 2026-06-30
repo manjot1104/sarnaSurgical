@@ -49,6 +49,22 @@
   line-height: 1.7;
 }
 
+.footer__company-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--accent-dark);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.footer__contact-list .footer__address {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: 0.25rem;
+}
+
 .footer__col h4 {
   font-family: var(--font-display);
   font-weight: 600;
@@ -88,4 +104,16 @@
 .footer__cert {
   color: var(--accent-dark);
   font-weight: 500;
+}
+
+@media (max-width: 500px) {
+  .footer {
+    padding: 3rem 0 max(1.5rem, env(safe-area-inset-bottom));
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }

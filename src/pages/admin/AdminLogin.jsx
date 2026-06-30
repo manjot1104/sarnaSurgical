@@ -39,7 +39,7 @@ export default function AdminLogin() {
           <Logo size="xl" />
         </div>
         <h1 className="admin-login__title">Admin Panel</h1>
-        <p className="admin-login__subtitle">Sign in to manage orders & inventory</p>
+        <p className="admin-login__subtitle">Sign in to manage orders, products & enquiries</p>
 
         <form onSubmit={handleSubmit} className="admin-login__form">
           {error && <div className="admin-login__error">{error}</div>}
@@ -59,7 +59,6 @@ export default function AdminLogin() {
             {loading ? 'Signing in...' : 'Sign In'}
           </button>
         </form>
-        <p className="admin-login__hint">Default password: sarna2024</p>
       </motion.div>
     </div>
   )

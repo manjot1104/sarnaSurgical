@@ -34,6 +34,7 @@ async function readOrders() {
 }
 
 async function writeOrders(orders) {
+  await fs.mkdir(path.dirname(ORDERS_FILE), { recursive: true })
   await fs.writeFile(ORDERS_FILE, JSON.stringify(orders, null, 2))
 }
 

@@ -105,3 +105,31 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
+@media (max-width: 768px) {
+  .confirm-page {
+    padding: 5.5rem 0 3rem;
+    align-items: flex-start;
+  }
+
+  .confirm-page__card {
+    padding: 2rem 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .confirm-page__actions {
+    flex-direction: column;
+  }
+
+  .confirm-page__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .confirm-page__summary > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}

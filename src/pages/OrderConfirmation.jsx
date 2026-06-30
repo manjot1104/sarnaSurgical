@@ -42,14 +42,14 @@ export default function OrderConfirmation() {
 
           <div className="confirm-page__summary">
             <div><span>Machine</span><span>{order.machine.name}</span></div>
-            <div><span>Items</span><span>{order.items.reduce((s, i) => s + i.quantity, 0)} parts</span></div>
+            <div><span>Items</span><span>{order.items.reduce((s, i) => s + i.quantity, 0)} item(s)</span></div>
             <div><span>Total</span><span className="price">{formatPrice(order.total)}</span></div>
             <div><span>Status</span><OrderStatusBadge status={order.status} /></div>
           </div>
 
           <p className="confirm-page__note">
-            Save your order number <strong>{order.orderNumber}</strong> to track your order.
-            A confirmation will be sent to <strong>{order.customer.email}</strong>.
+            A confirmation email has been sent to <strong>{order.customer.email}</strong>.
+            Save your order number <strong>{order.orderNumber}</strong> to track your order anytime.
           </p>
 
           <div className="confirm-page__actions">

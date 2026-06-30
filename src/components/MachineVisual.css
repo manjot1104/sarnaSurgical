@@ -40,3 +40,24 @@
   position: relative;
   z-index: 1;
 }
+
+@media (max-width: 768px) {
+  .machine-visual--photo {
+    min-height: 180px;
+    padding: 0.75rem;
+  }
+
+  .machine-visual__photo {
+    max-height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .machine-visual--photo {
+    min-height: 150px;
+  }
+
+  .machine-visual__photo {
+    max-height: 200px;
+  }
+}
