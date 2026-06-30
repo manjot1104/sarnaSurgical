@@ -27,6 +27,6 @@ Thumbs.db
 # Vite
 .vite/
 
-# Server data (orders, enquiries — use MongoDB in production)
-server/data/
+# Server runtime data only (not source code)
+server/data/*.json
 server/uploads/

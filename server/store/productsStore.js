@@ -3,7 +3,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import crypto from 'crypto'
 import { getDb, isMongoEnabled } from './db.js'
-import { SEED_PRODUCTS } from '../data/seedProducts.js'
+import { SEED_PRODUCTS } from '../config/seedProducts.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const DATA_DIR = path.join(__dirname, '../data')

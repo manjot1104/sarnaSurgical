@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer'
-import { companyInfo } from '../data/company.js'
+import { companyInfo } from '../config/company.js'
 
 let transporter = null
 
